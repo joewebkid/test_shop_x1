@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:test_comp_plant/screens/home/home_screen.dart';
 import 'package:test_comp_plant/screens/profile/profile_screen.dart';
+import 'package:test_comp_plant/screens/lifestyle/lifestyle_screen.dart';
 
 import '../constants.dart';
 import '../enums.dart';
@@ -65,34 +66,125 @@ class CustomBottomNavBar extends StatelessWidget {
                   Navigator.pushNamed(context, ProfileScreen.routeName);
                 },
               ),
-              IconButton(
-                icon: SvgPicture.asset(
-                  "assets/icons/Shop Icon.svg",
-                  color: MenuState.home == selectedMenu
-                      ? kPrimaryColor
-                      : inActiveIconColor,
+
+              TextButton(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisSize: MainAxisSize.min,
+                  children: <Widget>[
+                    SvgPicture.asset(
+                      "assets/icons/Cart Icon.svg",
+                      color: MenuState.home == selectedMenu
+                          ? kPrimaryColor
+                          : inActiveIconColor,
+                    ),
+                    Text(
+                      'Шопинг',
+                      style: TextStyle(
+                        color: MenuState.home == selectedMenu
+                            ? kPrimaryColor
+                            : inActiveIconColor,
+                        fontSize: getProportionateScreenWidth(10),
+                      ),
+                    ),
+                  ],
                 ),
-                onPressed: () =>
-                    Navigator.pushNamed(context, HomeScreen.routeName),
+                onPressed: () {
+                  Navigator.pushNamed(context, HomeScreen.routeName);
+                },
               ),
-              IconButton(
-                icon: SvgPicture.asset("assets/icons/Heart Icon.svg"),
-                onPressed: () {},
-              ),
-              IconButton(
-                icon: SvgPicture.asset("assets/icons/Chat bubble Icon.svg"),
-                onPressed: () {},
-              ),
-              IconButton(
-                icon: SvgPicture.asset(
-                  "assets/icons/User Icon.svg",
-                  color: MenuState.profile == selectedMenu
-                      ? kPrimaryColor
-                      : inActiveIconColor,
+              TextButton(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisSize: MainAxisSize.min,
+                  children: <Widget>[
+                    Icon(
+                      Icons.accessibility,
+                      color: MenuState.lifestyle == selectedMenu
+                          ? kPrimaryColor
+                          : inActiveIconColor,
+                    ),
+                    // SvgPicture.asset(
+                    //   "assets/icons/Cart Icon.svg",
+                    //   color: MenuState.lifestyle == selectedMenu
+                    //       ? kPrimaryColor
+                    //       : inActiveIconColor,
+                    // ),
+                    Text(
+                      'Мой образ',
+                      style: TextStyle(
+                        color: MenuState.lifestyle == selectedMenu
+                            ? kPrimaryColor
+                            : inActiveIconColor,
+                        fontSize: getProportionateScreenWidth(10),
+                      ),
+                    ),
+                  ],
                 ),
-                onPressed: () =>
-                    Navigator.pushNamed(context, ProfileScreen.routeName),
+                onPressed: () {
+                  Navigator.pushNamed(context, LifestyleScreen.routeName);
+                },
               ),
+              TextButton(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisSize: MainAxisSize.min,
+                  children: <Widget>[
+                    Icon(
+                      Icons.checkroom,
+                      color: MenuState.lifestyle == selectedMenu
+                          ? kPrimaryColor
+                          : inActiveIconColor,
+                    ),
+                    // SvgPicture.asset(
+                    //   "assets/icons/Cart Icon.svg",
+                    //   color: MenuState.lifestyle == selectedMenu
+                    //       ? kPrimaryColor
+                    //       : inActiveIconColor,
+                    // ),
+                    Text(
+                      'Гардероб',
+                      style: TextStyle(
+                        color: MenuState.lifestyle == selectedMenu
+                            ? kPrimaryColor
+                            : inActiveIconColor,
+                        fontSize: getProportionateScreenWidth(10),
+                      ),
+                    ),
+                  ],
+                ),
+                onPressed: () {
+                  Navigator.pushNamed(context, LifestyleScreen.routeName);
+                },
+              ),
+              // IconButton(
+              //   icon: SvgPicture.asset(
+              //     "assets/icons/Shop Icon.svg",
+              //     color: MenuState.home == selectedMenu
+              //         ? kPrimaryColor
+              //         : inActiveIconColor,
+              //   ),
+              //   onPressed: () =>
+              //       Navigator.pushNamed(context, HomeScreen.routeName),
+              // ),
+              // IconButton(
+              //   icon: SvgPicture.asset("assets/icons/Heart Icon.svg"),
+              //   onPressed: () {},
+              // ),
+              // IconButton(
+              //   icon: SvgPicture.asset("assets/icons/Chat bubble Icon.svg"),
+              //   onPressed: () {},
+              // ),
+              // IconButton(
+              //   icon: SvgPicture.asset(
+              //     "assets/icons/User Icon.svg",
+              //     color: MenuState.profile == selectedMenu
+              //         ? kPrimaryColor
+              //         : inActiveIconColor,
+              //   ),
+              //   onPressed: () =>
+              //       Navigator.pushNamed(context, ProfileScreen.routeName),
+              // ),
             ],
           )),
     );

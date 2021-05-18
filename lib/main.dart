@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:test_comp_plant/routes.dart';
-import 'package:test_comp_plant/screens/profile/profile_screen.dart';
+// import 'package:test_comp_plant/screens/profile/profile_screen.dart';
 import 'package:test_comp_plant/screens/splash/splash_screen.dart';
 import 'package:test_comp_plant/theme.dart';
 
